@@ -58,16 +58,6 @@ class List extends React.Component {
         });
     }
 
-    renderChangePercent(percent) {
-        if (percent > 0) {
-            return <span className="percent-raised">{percent}% &uarr;</span>
-        } else if(percent < 0) {
-            return <span className="percent-fallen">{percent}% &darr;</span>
-        } else {
-            return <span className="percent-unchanged">{percent}%</span>
-        }
-    }
-
     handlePaginationClick(direction) {
         let nextPage = this.state.page;
         if (direction ===  'next') {
@@ -96,8 +86,7 @@ class List extends React.Component {
         return (
             <div>
                 <Table
-                    currencies={currencies}
-                    renderChangePercent={this.renderChangePercent}
+                    currencies={currencies}                    
                 />
                 <Pagination 
                     totalPages={totalPages}

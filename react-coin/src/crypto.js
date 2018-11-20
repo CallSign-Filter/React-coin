@@ -5,11 +5,9 @@ import Header from "./components/common/Header";
 import List from './components/list/List.js';
 import NotFound from './components/notfound/NotFound';
 import Detail from './components/detail/Detail';
-import './index.css';
+import './crypto.css';
 
 const App = () => {
-
-    const title = 'React Coin';
 
     return (
         <BrowserRouter>
@@ -17,8 +15,8 @@ const App = () => {
                 <Header />
 
                 <Switch>
-                    <Route path="/" component={List} exact />  
-                    <Route path="/currency/:id" component={Detail} exact />
+                    <Route path="/crypto/" component={List} exact />  
+                    <Route path="/crypto/currency/:id" component={Detail} exact />
                     <Route component={NotFound} />   
                     {/* everything else other than above */}
                 </Switch>
